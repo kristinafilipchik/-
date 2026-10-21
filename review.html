@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Отзыв о путешествии</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="page">
+<header class="site-header">
+<div class="brand">Мир путешествий</div>
+<nav class="main-nav">
+<div class="nav-row">
+<a href="index.html" class="icon-link" title="На главную"><img src="img/icon_home.png" width="36" height="36" alt="Домой"></a>
+<a href="index.html">Главная</a>
+<a href="mountains.html">Горы</a>
+<a href="deserts.html">Пустыни</a>
+<a href="sea.html">Море</a>
+<a href="tips.html">Советы</a>
+<a href="tips.html#section1" class="bookmark">Чек-лист (закладка)</a>
+</div>
+<div class="nav-row small"><span class="nav-label">Формы</span>
+<a href="contacts.html">Контакты</a>
+<a href="review.html" class="active">Отзыв</a>
+<span class="nav-label">Задания JS</span>
+<a href="dom.html">DOM_JS</a>
+<a href="latin.html">Латиница по клику</a>
+<a href="task.html">Задача 1008</a>
+<span class="nav-label">Внешние</span>
+<a href="https://ru.wikipedia.org/" target="_blank" rel="noopener">Википедия</a>
+<a href="https://ru.wikipedia.org/" target="_blank" rel="noopener" class="icon-link" title="Википедия (новое окно)"><img src="img/icon_world.png" width="36" height="36" alt="Википедия"></a>
+</div></nav>
+</header>
+<main>
+
+<h1>Отзыв о путешествии</h1>
+<div class="note">Расскажите о своей поездке. Часть полей заполнена по умолчанию: эти значения тоже уходят на сервер.</div>
+<!-- Форма отправляется на сервер преподавателя: http://185.182.111.214:7633/cgi-bin/form_api.py (метод get, как в его примере). -->
+<form action="http://185.182.111.214:7633/cgi-bin/form_api.py" method="get" target="_self" id="reviewForm">
+<input type="hidden" name="form_type" value="travel_review">
+<input type="hidden" name="site_version" value="1.0">
+<fieldset><legend>О поездке</legend>
+<label class="field" for="reviewer_name">Ваше имя</label>
+<input type="text" id="reviewer_name" name="reviewer_name" value="Кристина" required>
+<label class="field" for="trip_country">Страна или город</label>
+<input type="text" id="trip_country" name="trip_country" value="Чехия" required>
+<label class="field" for="trip_days">Сколько дней длилась поездка</label>
+<input type="number" id="trip_days" name="trip_days" value="7" min="1" max="365" required>
+<label class="field" for="trip_date">Дата начала поездки</label>
+<input type="date" id="trip_date" name="trip_date" value="2026-07-01" required>
+</fieldset>
+<fieldset class="inline"><legend>Как добирались</legend>
+<label><input type="radio" name="transport" value="plane" checked> Самолёт</label>
+<label><input type="radio" name="transport" value="train"> Поезд</label>
+<label><input type="radio" name="transport" value="car"> Автомобиль</label>
+<label><input type="radio" name="transport" value="bus"> Автобус</label>
+</fieldset>
+<fieldset class="inline"><legend>Оценка поездки</legend>
+<label><input type="radio" name="rating" value="1"> 1</label>
+<label><input type="radio" name="rating" value="2"> 2</label>
+<label><input type="radio" name="rating" value="3"> 3</label>
+<label><input type="radio" name="rating" value="4"> 4</label>
+<label><input type="radio" name="rating" value="5" checked> 5</label>
+</fieldset>
+<fieldset class="inline"><legend>Что понравилось (можно выбрать несколько)</legend>
+<label><input type="checkbox" name="liked" value="museums" checked> Музеи</label>
+<label><input type="checkbox" name="liked" value="nature"> Природа</label>
+<label><input type="checkbox" name="liked" value="food" checked> Еда</label>
+<label><input type="checkbox" name="liked" value="shopping"> Магазины</label>
+</fieldset>
+<fieldset><legend>Отзыв</legend>
+<label class="field" for="review_text">Ваш отзыв</label>
+<textarea id="review_text" name="review_text" rows="4">Поездка прошла отлично.</textarea>
+<label class="field" for="review_password">Пароль для изменения отзыва (придумайте любое слово)</label>
+<input type="password" id="review_password" name="review_password" value="" autocomplete="new-password" required>
+</fieldset>
+<fieldset><legend>Служебные поля сервера</legend>
+<!-- Фрагмент из примера преподавателя: поля не перемещать, значения можно редактировать -->
+<label class="field" for="file_name">Название файла на сервере</label>
+<input type="text" id="file_name" name="000_file_name" value="g06u28.txt">
+<label class="field" for="mode">Тип записи в файл</label>
+<select id="mode" name="010_mode">
+<option value="a">a - дозаписать в файл</option>
+<option value="w">w - очистить файл и записать в файл</option>
+</select>
+<input type="hidden" name="function" value="page">
+<input type="hidden" name="page_id" value="3">
+</fieldset>
+<input type="submit" value="Отправить отзыв">
+<input type="reset" value="Очистить">
+</form>
+
+</main>
+<footer class="site-footer"><div>Филипчик Кристина Юрьевна, группа БМБ233, Высшая школа экономики, 2026</div></footer>
+</div>
+</body>
+</html>

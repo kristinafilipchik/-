@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DOM_JS. Считываем информацию из DOM</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="page">
+<header class="site-header">
+<div class="brand">Мир путешествий</div>
+<nav class="main-nav">
+<div class="nav-row">
+<a href="index.html" class="icon-link" title="На главную"><img src="img/icon_home.png" width="36" height="36" alt="Домой"></a>
+<a href="index.html">Главная</a>
+<a href="mountains.html">Горы</a>
+<a href="deserts.html">Пустыни</a>
+<a href="sea.html">Море</a>
+<a href="tips.html">Советы</a>
+<a href="tips.html#section1" class="bookmark">Чек-лист (закладка)</a>
+</div>
+<div class="nav-row small"><span class="nav-label">Формы</span>
+<a href="contacts.html">Контакты</a>
+<a href="review.html">Отзыв</a>
+<span class="nav-label">Задания JS</span>
+<a href="dom.html" class="active">DOM_JS</a>
+<a href="latin.html">Латиница по клику</a>
+<a href="task.html">Задача 1008</a>
+<span class="nav-label">Внешние</span>
+<a href="https://ru.wikipedia.org/" target="_blank" rel="noopener">Википедия</a>
+<a href="https://ru.wikipedia.org/" target="_blank" rel="noopener" class="icon-link" title="Википедия (новое окно)"><img src="img/icon_world.png" width="36" height="36" alt="Википедия"></a>
+</div></nav>
+</header>
+<main>
+
+<h1>DOM_JS. Считываем информацию из DOM</h1>
+<div class="note">
+<b>Команды:</b>
+<span class="cmd">document.getElementsByTagName('p')[2].childNodes[1].innerText   // фамилия</span>
+<span class="cmd">document.getElementsByTagName('p')[3].childNodes[1].innerText   // имя</span>
+<span class="cmd">document.getElementsByTagName('p')[6].childNodes[1].innerText   // год рождения</span>
+</div>
+
+<div class="passport">
+<div class="pg">
+<h2>Паспорт гражданина РФ - страница 2</h2>
+<p>Выдан: ГУ МВД России по г. Москве</p>
+<p>Дата выдачи: 15.07.2020</p>
+<p>Фамилия: <b>Филипчик</b></p>
+<p>Имя: <b>Кристина</b></p>
+<p>Отчество: <b>Юрьевна</b></p>
+<p>Пол: <b>женский</b></p>
+<p>Дата рождения: 21.08.<b>2006</b></p>
+<p>Место рождения: <b>г. Москва</b></p>
+</div>
+<div class="pg">
+<h2>Паспорт гражданина РФ - страница 3</h2>
+<p>Место жительства: <b>г. Москва, ул. Большая почтовая, д. 1, кв. 1</b></p>
+<p>Дата регистрации: <b>20.08.2017</b></p>
+<p>Код подразделения: <b>770-001</b></p>
+</div>
+</div>
+
+<h2>Скриншот консоли</h2>
+<div class="shot"><img src="img/dom_screenshot.png" alt="Скриншот консоли браузера с результатами команд"></div>
+
+</main>
+<footer class="site-footer"><div>Филипчик Кристина Юрьевна, группа БМБ233, Высшая школа экономики, 2026</div></footer>
+</div>
+</body>
+</html>

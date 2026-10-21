@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Контакты - отправка данных</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="page">
+<header class="site-header">
+<div class="brand">Мир путешествий</div>
+<nav class="main-nav">
+<div class="nav-row">
+<a href="index.html" class="icon-link" title="На главную"><img src="img/icon_home.png" width="36" height="36" alt="Домой"></a>
+<a href="index.html">Главная</a>
+<a href="mountains.html">Горы</a>
+<a href="deserts.html">Пустыни</a>
+<a href="sea.html">Море</a>
+<a href="tips.html">Советы</a>
+<a href="tips.html#section1" class="bookmark">Чек-лист (закладка)</a>
+</div>
+<div class="nav-row small"><span class="nav-label">Формы</span>
+<a href="contacts.html" class="active">Контакты</a>
+<a href="review.html">Отзыв</a>
+<span class="nav-label">Задания JS</span>
+<a href="dom.html">DOM_JS</a>
+<a href="latin.html">Латиница по клику</a>
+<a href="task.html">Задача 1008</a>
+<span class="nav-label">Внешние</span>
+<a href="https://ru.wikipedia.org/" target="_blank" rel="noopener">Википедия</a>
+<a href="https://ru.wikipedia.org/" target="_blank" rel="noopener" class="icon-link" title="Википедия (новое окно)"><img src="img/icon_world.png" width="36" height="36" alt="Википедия"></a>
+</div></nav>
+</header>
+<main>
+
+<h1>Контактные данные</h1>
+<div class="note">Заполните форму и нажмите «Отправить»: данные уйдут на удалённый сервер. Фамилия, имя и группа уже подставлены по умолчанию.</div>
+<!-- Форма отправляется на сервер преподавателя: http://185.182.111.214:7633/cgi-bin/form_api.py (метод get, как в его примере). -->
+<form action="http://185.182.111.214:7633/cgi-bin/form_api.py" method="get" target="_self" id="contactForm">
+<input type="hidden" name="form_type" value="contacts">
+<fieldset><legend>Ваши данные</legend>
+<label class="field" for="surname">Фамилия</label>
+<input type="text" id="surname" name="surname" value="Филипчик" required>
+<label class="field" for="first_name">Имя</label>
+<input type="text" id="first_name" name="first_name" value="Кристина" required>
+<label class="field" for="student_group">Группа</label>
+<input type="text" id="student_group" name="student_group" value="БМБ233" required>
+<label class="field" for="phone">Мобильный телефон</label>
+<input type="tel" id="phone" name="phone" placeholder="+7 900 000-00-00" required>
+<label class="field" for="email">Электронная почта</label>
+<input type="email" id="email" name="email" placeholder="name@example.com" required>
+<label class="field" for="send_date">Дата отправки сообщения</label>
+<input type="date" id="send_date" name="send_date" required>
+<label class="field" for="message">Сообщение</label>
+<textarea id="message" name="message" rows="4" placeholder="Напишите пару слов"></textarea>
+</fieldset>
+<fieldset><legend>Служебные поля сервера</legend>
+<!-- Фрагмент из примера преподавателя: поля не перемещать, значения можно редактировать -->
+<label class="field" for="file_name">Название файла на сервере</label>
+<input type="text" id="file_name" name="000_file_name" value="g06u28.txt">
+<label class="field" for="mode">Тип записи в файл</label>
+<select id="mode" name="010_mode">
+<option value="a">a - дозаписать в файл</option>
+<option value="w">w - очистить файл и записать в файл</option>
+</select>
+<input type="hidden" name="function" value="page">
+<input type="hidden" name="page_id" value="3">
+</fieldset>
+<input type="submit" value="Отправить">
+<input type="reset" value="Очистить">
+</form>
+<script>
+// подставляем сегодняшнюю дату по умолчанию
+try {
+  var d = new Date();
+  var m = String(d.getMonth() + 1).padStart(2, "0");
+  var day = String(d.getDate()).padStart(2, "0");
+  document.getElementById("send_date").value = d.getFullYear() + "-" + m + "-" + day;
+} catch (e) {}
+</script>
+
+</main>
+<footer class="site-footer"><div>Филипчик Кристина Юрьевна, группа БМБ233, Высшая школа экономики, 2026</div></footer>
+</div>
+</body>
+</html>
